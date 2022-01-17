@@ -20,9 +20,14 @@ io.on('connection', (socket) => {
     console.log('New WebSocket connection')
 
     socket.emit('message', welcomeMessage)
+    socket.broadcast.emit('message', 'A new user has joined the chat!')
 
     socket.on('sendChatMessage', (chatMessage) => {
         io.emit('message', chatMessage)
+    })
+
+    socket.on('disconnect', () => {
+        io.emit('message', 'A user has left the chat!')
     })
 })
 
