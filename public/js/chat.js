@@ -1,14 +1,22 @@
 const socket = io()
 
-// elements with dollar sign naming convention
+// elements (with dollar sign naming convention)
 const $messageForm = document.querySelector('#message-form')
 const $messageFormInput = $messageForm.querySelector('input')
 const $messageFormButton = $messageForm.querySelector('button')
 const $shareLocationButton = document.querySelector('#share-location')
+const $messages = document.querySelector('#messages')
+
+// templates
+const messageTemplate = document.querySelector('#message-template').innerHTML
 
 // send data (print a message) from server to client
 socket.on('message', (message) => {
     console.log(message)
+    const html = Mustache.render(messageTemplate, {
+        message: message
+    })
+    $messages.insertAdjacentHTML('beforeend', html)
 })
 
 // send data from client to server
