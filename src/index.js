@@ -14,8 +14,7 @@ app.use(express.static(publicDirectoryPath))
 
 const welcomeMessage = 'Welcome to the chat app!'
 
-// emit data (welcomeMessage) from server to client 
-// emit data (sendChatMessage) from client to server 
+// emit data from server to client 
 io.on('connection', (socket) => {
     console.log('New WebSocket connection')
 
@@ -24,6 +23,10 @@ io.on('connection', (socket) => {
 
     socket.on('sendChatMessage', (chatMessage) => {
         io.emit('message', chatMessage)
+    })
+
+    socket.on('shareLocation', (locationCoordinates) => {
+        io.emit('message', `https://google.com/maps?q=${locationCoordinates.latitude},${locationCoordinates.longitude}`)
     })
 
     socket.on('disconnect', () => {
