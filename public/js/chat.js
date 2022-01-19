@@ -13,7 +13,13 @@ document.querySelector('#message-form').addEventListener('submit', (event) => {
 
     // send data (chat message) from client to server
     const chatMessage = event.target.elements.message.value
-    socket.emit('sendChatMessage', chatMessage)
+    socket.emit('sendChatMessage', chatMessage, (error) => {
+        if (error) {
+            return console.log(error)
+        }
+
+        console.log('Delivered')
+    })
 })
 
 // share user location
@@ -29,6 +35,8 @@ document.querySelector('#share-location').addEventListener('click', () => {
         socket.emit('shareLocation', {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
+        }, () => {
+            console.log('Location delivered.')  
         })
     })
 })
