@@ -98,6 +98,26 @@ button:disabled {
     overflow-y: scroll
 }
 
+.logo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 12px;
+}
+
+.logo img {
+    width: 25%;
+    height: 100%;
+    flex-grow: 2;
+}
+
+.logo h1 {
+    font-size: 40px;
+    margin: 0 12px;
+    padding-right: 12px;
+}
+
 /* Chat styles */
 
 .chat__main {
