@@ -15,7 +15,7 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 
 app.use(express.static(publicDirectoryPath))
 
-const welcomeMessage = 'Welcome to the chat app!'
+const adminName = 'Chatterbox Team'
 
 // emit data from server to client 
 io.on('connection', (socket) => {
@@ -31,13 +31,16 @@ io.on('connection', (socket) => {
 
         socket.join(user.room)
         
-        socket.emit('message', generateMessage('Welcome!'))
-        socket.broadcast.to(user.room).emit('message', generateMessage(`${user.username} has joined the chat.`))
+        socket.emit('message', generateMessage(adminName, `Welcome to Chatterbox, ${user.username}!`))
+        socket.broadcast.to(user.room).emit('message', generateMessage(adminName, `${user.username} has joined the chat.`))
     
         callback()
     })
 
     socket.on('sendChatMessage', (chatMessage, callback) => {
+
+        const user = getUser(socket.id)
+
         const filter = new Filter()
         
         // prevent message from sending due to profanity
@@ -45,12 +48,13 @@ io.on('connection', (socket) => {
             return callback('Profanity is not allowed in the chat.')
         }
 
-        io.to('NYC').emit('message', generateMessage(chatMessage))
+        io.to(user.room).emit('message', generateMessage(user.username, chatMessage))
         callback()
     })
 
     socket.on('shareLocation', (locationCoordinates, callback) => {
-        io.emit('locationMessage', generateLocationMessage(`https://google.com/maps?q=${locationCoordinates.latitude},${locationCoordinates.longitude}`))
+        const user = getUser(socket.id)
+        io.to(user.room).emit('locationMessage', generateLocationMessage(user.username, `https://google.com/maps?q=${locationCoordinates.latitude},${locationCoordinates.longitude}`))
         callback()
     })
 
@@ -58,7 +62,7 @@ io.on('connection', (socket) => {
         const user = removeUser(socket.id)
 
         if (user) {
-            io.to(user.room).emit('message', generateMessage(`${user.username} has left the chat.`))
+            io.to(user.room).emit('message', generateMessage(adminName, `${user.username} has left the chat.`))
         }
     })
 })
