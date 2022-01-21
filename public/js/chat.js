@@ -43,10 +43,18 @@ const autoscroll = () => {
 // send data (print a message) from server to client
 socket.on('message', (message) => {
     console.log(message)
+
+    const currentUserStamp = message.username === username ? 'current-user-stamp' : ''
+    const currentUserMessage = message.username === username ? 'current-user-message' : ''
+    const currentUserBlock = message.username === username ? 'current-user-block' : 'other-user-block'
+
     const html = Mustache.render(messageTemplate, {
         username: message.username,
         message: message.text,
-        createdAt: moment(message.createdAt).format('h:mm a')
+        createdAt: moment(message.createdAt).format('h:mm a'),
+        currentUserStamp: currentUserStamp,
+        currentUserMessage: currentUserMessage,
+        currentUserBlock: currentUserBlock
     })
     $messages.insertAdjacentHTML('beforeend', html)
     autoscroll()

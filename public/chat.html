@@ -18,12 +18,10 @@
     <div class="chat">
       <div class="chat__sidebar">
         <div class="logo">
-          <img src="../img/logo.png" alt="logo">
+          <img src="../img/logo.png" alt="logo" />
           <h1>Chatterbox</h1>
         </div>
-        <div id="sidebar">
-
-        </div>
+        <div id="sidebar"></div>
       </div>
       <div class="chat__main">
         <div id="messages" class="chat__messages"></div>
@@ -45,12 +43,17 @@
     </div>
 
     <script id="message-template" type="text/html">
-      <div class="message">
+      <div class="message {{currentUserStamp}}">
         <p>
           <span class="message__name">{{username}}</span>
           <span class="message__meta">{{createdAt}}</span>
         </p>
-        <p class="message__content">{{message}}</p>
+
+        <p class="message__content {{currentUserMessage}}">
+          <span id="{{currentUserBlock}}">
+            {{message}}
+          </span>
+        </p>
       </div>
     </script>
 
@@ -61,7 +64,9 @@
           <span class="message__meta">{{createdAt}}</span>
         </p>
         <p>
-          <a href="{{locationUrl}}" target="_blank">{{username}}'s current location</a>
+          <a href="{{locationUrl}}" target="_blank"
+            >{{username}}'s current location</a
+          >
         </p>
       </div>
     </script>
@@ -71,10 +76,9 @@
       <h3 class="list-title">Users</h3>
       <ul class="users">
         {{#users}}
-          <li>{{username}}</li>
+        <li>{{username}}</li>
         {{/users}}
       </ul>
-
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
