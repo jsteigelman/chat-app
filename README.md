@@ -3,6 +3,8 @@
 ## Description
 This is a Node.js chat app with real-time data transfer.
 
+To test this project with multiple users in a chat room, simply open the URL in two seperate browser windows. Enter the same chat room name in both tabs. There, you will be able to send and receive messages in real-time. Or, simply share the link with a friend and join the same chat room name!
+
 ## Live Site URL
 This app is deployed to Heroku: 
 [https://steigelman-chat-app.herokuapp.com/](https://steigelman-chat-app.herokuapp.com/)
@@ -12,8 +14,6 @@ This app is deployed to Heroku:
 * User can send messages that will be received by all other users in the same chat room
 * User can send their location to other users in the same chat room by clicking the "Share Location" button (caution: sharing your location will drop a pin on Google Maps with your exact location; please exercise caution when sharing this information)
 * Messages containing profanity are blocked, and the offending user will receive an alert when attempting to submit the message
-
-To test this project with multiple users in a chat room, simply open the URL in two seperate browser windows. Enter the same chat room name in both tabs. There, you will be able to send and receive messages in real-time. Or, simply share the link with a friend and join the same chat room name!
 
 ## Built With
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime environment
