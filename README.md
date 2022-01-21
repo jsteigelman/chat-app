@@ -16,6 +16,9 @@ This app is deployed to Heroku:
 
 ## Built With
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime environment
+* [Express](https://expressjs.com/) - web application framework
+* [socket.io](https://www.npmjs.com/package/socket.io) - real-time bidirectional event-based communication
 * [Moment.js](https://www.npmjs.com/package/moment) - JavaScript date library for parsing, validating, manipulating, and formatting dates
 * [mustache](https://www.npmjs.com/package/mustache) - zero-dependency implementation of the mustache template system in JavaScript
 * [qs](https://www.npmjs.com/package/qs) - querystring parsing and stringifying library with some added security
+* [bad-words](https://www.npmjs.com/package/bad-words) - JavaScript filter for bad words
