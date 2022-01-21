@@ -3,7 +3,9 @@
 ## Description
 This is a Node.js chat app with real-time data transfer.
 
-To test this project with multiple users in a chat room, simply share the link with a friend and join the same chat room name! Alternatively, simply open the URL in two seperate browser windows. Enter the same chat room name in both tabs. There, you will be able to send and receive messages in real-time.
+To test this project with multiple users in a chat room, simply share the link with a friend and join the same chat room name! 
+
+Alternatively, to test this project as a single user, simply open the URL in two seperate browser windows. Enter the same chat room name in both tabs. There, you will be able to send and receive messages in real-time.
 
 ## Live Site URL
 This app is deployed to Heroku: 
