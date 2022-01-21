@@ -10,10 +10,10 @@ This app is deployed to Heroku:
 ## Functionality
 * User can join a chat room by entering a username and chat room name
 * User can send messages that will be received by all other users in the same chat room
-* User can send their location to other users in the same chat room by clicking the "Share Location" button
+* User can send their location to other users in the same chat room by clicking the "Share Location" button (caution: sharing your location will drop a pin on Google Maps with your exact location; please be cautious when sharing this information)
 * Messages containing profanity are blocked, and the offending user will receive an alert when attempting to submit the message
 
-Note: To test this project, simply open the link in two seperate windows and enter the same chat room name. There, you will be able to send and receive messages in real-time in the specified chat room.
+To test this project with multiple users in a chat room, simply open the URL in two seperate browser windows. Enter the same chat room name in both tabs. There, you will be able to send and receive messages in real-time.
 
 ## Built With
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime environment
