@@ -58,13 +58,13 @@
     </script>
 
     <script id="location-message-template" type="text/html">
-      <div class="message">
+      <div class="message {{currentUserStamp}}">
         <p>
           <span class="message__name">{{username}}</span>
           <span class="message__meta">{{createdAt}}</span>
         </p>
-        <p>
-          <a href="{{locationUrl}}" target="_blank"
+        <p {{currentUserMessage}}>
+          <a href="{{locationUrl}}" target="_blank" id="{{currentUserBlock}}"
             >{{username}}'s current location</a
           >
         </p>

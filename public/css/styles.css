@@ -198,6 +198,10 @@ button:disabled {
     text-align: right;
 }
 
+div.message.current-user-stamp {
+    text-align: right;
+}
+
 .current-user-message {
     text-align: right;
     font-size: 22px;

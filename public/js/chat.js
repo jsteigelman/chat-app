@@ -62,10 +62,16 @@ socket.on('message', (message) => {
 
 socket.on('locationMessage', (locationObject) => {
     console.log(locationObject)
+    const currentUserStamp = locationObject.username === username ? 'current-user-stamp' : ''
+    const currentUserMessage = locationObject.username === username ? 'current-user-message' : ''
+    const currentUserBlock = locationObject.username === username ? 'current-user-block' : 'other-user-block'
     const html = Mustache.render(locationMessageTemplate, {
         username: locationObject.username,
         locationUrl: locationObject.url,
-        createdAt: moment(locationObject.createdAt).format('h:mm a')
+        createdAt: moment(locationObject.createdAt).format('h:mm a'),
+        currentUserStamp: currentUserStamp,
+        currentUserMessage: currentUserMessage,
+        currentUserBlock: currentUserBlock
     })
     $messages.insertAdjacentHTML('beforeend', html)
     autoscroll()
