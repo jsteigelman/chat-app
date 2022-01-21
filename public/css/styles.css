@@ -185,6 +185,7 @@ button:disabled {
 }
 
 .message a {
+    font-size: 22px;
     color: #0070CC;
 }
 
