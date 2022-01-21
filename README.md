@@ -27,5 +27,5 @@ Alternatively, to test this project as a single user, simply open the URL in two
 * [qs](https://www.npmjs.com/package/qs) - querystring parsing and stringifying library with some added security
 * [bad-words](https://www.npmjs.com/package/bad-words) - JavaScript filter for bad words
 
-## Preview
+## Chat App Preview
 <img src="/public/img/chat-app-preview.png" alt="chat app" width="840"/>
