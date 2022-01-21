@@ -16,8 +16,8 @@ input {
 
 body {
     line-height: 1.4;
-    color: #E5E7EB;
-    background-color: #151B20;
+    color: #000;
+    background-color: #fff;
     font-family: 'Dongle', sans-serif;
 }
 
@@ -30,7 +30,7 @@ label {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #777;
+    color: #8f8f8f;
 }
 
 input {
@@ -42,26 +42,27 @@ input {
 button {
     cursor: pointer;
     padding: 12px;
-    background: #21252A;
+    background: #39dda8;
     border: none;
-    color: #7A7B7F;
+    color: #fff;
+    border-radius: 12px;
     font-size: 16px;
     transition: background .3s ease;
 }
 
 button:hover {
-    background: #6b47b8;
+    background: #2eb78a;
 }
 
 button:disabled {
     cursor: default;
-    background: #7c5cbf94;
+    background: #2eb78a;
 }
 
 /* Join Page Styles */
 
 .centered-form {
-    background: #333744;
+    background-image: linear-gradient(#FFD500, #00D1FF);
     width: 100vw;
     height: 100vh;   
     display: flex;
@@ -70,23 +71,39 @@ button:disabled {
 }
 
 .centered-form__box {
-    box-shadow: 0px 0px 17px 1px #1D1F26;
     background: #F7F7FA;
     padding: 24px;
     width: 250px;
+    border-radius: 12px;
 }
 
 .centered-form__box h1 {
     color: black;
+    line-height: 1;
+    font-size: 40px;
 }
 
 .centered-form button {
     width: 100%;
+    border-radius: 8px;
+
 }
 
 .centered-form input {
     margin-bottom: 16px;
     width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 16px #e7eced;
+}
+
+#join-description {
+    color: #8f8f8f;
+    font-weight: 300;
+    padding: 0;
+    margin: 0 0 16px;
+    line-height: 1;
+    font-size: 22px;
+    line-height: 1;
 }
 
 /* Chat Page Layout */
@@ -99,7 +116,8 @@ button:disabled {
     height: 100vh;
     color: white;
     background: #21252A;
-    width: 225px;
+    background-image: linear-gradient(#FFD500, #00D1FF);
+    width: 35%;
     overflow-y: scroll
 }
 
@@ -115,11 +133,12 @@ button:disabled {
     width: 25%;
     height: 100%;
     flex-grow: 2;
+    max-width: 80px;
 }
 
 .logo h1 {
-    font-size: 40px;
-    margin: 0 12px;
+    font-size: 48px;
+    margin: auto 12px;
     padding-right: 12px;
 }
 
@@ -151,7 +170,7 @@ button:disabled {
 }
 
 .message__content {
-    background-color: #7661FE; 
+    background-color: #E9D516;
     font-size: 22px;
     font-weight: 300;
     width: fit-content;
@@ -160,7 +179,7 @@ button:disabled {
 }
 
 .message__meta {
-    color: #585B61;
+    color: #B7B7B7;
     font-size: 24px;
     font-weight: 300;
 }
@@ -172,7 +191,7 @@ button:disabled {
 /* Message Composition Styles */
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #7A7B7F;
+    color: #B7B7B7;
     opacity: 1; /* Firefox */
   }
 
@@ -190,13 +209,15 @@ button:disabled {
 }
 
 .compose input {
-    border: 1px solid #282C31;
+    border: 1px solid #e7eced;
     width: 100%;
     padding: 12px;
     margin: 0 16px 0 0;
     flex-grow: 1;
-    background-color: #21252A;
-    color: #E5E7EB;
+    background-color: #fff;
+    color: #000;
+    border-radius: 12px;
+    box-shadow: 0 0 16px #e7eced;
 }
 
 .compose button {
@@ -206,11 +227,11 @@ button:disabled {
 /* Chat Sidebar Styles */
 
 .room-title {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 28px;
-    /* background: #5349A1; */
-    color: #7661FE;
-    padding: 20px;   
+    color: #000;
+    padding: 20px;  
+    margin-top: 14px; 
 }
 
 .list-title {
