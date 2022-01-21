@@ -3,7 +3,7 @@
 ## Description
 This is a Node.js chat app with real-time data transfer.
 
-## Instructions
+## How to Use
 To chat with other users, simply share the link with a friend and join the same chat room name! 
 
 Alternatively, to test this project as a single user, simply open the URL in two seperate browser windows. Enter the same chat room name in both tabs. There, you will be able to send and receive messages in real-time.
