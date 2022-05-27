@@ -17,6 +17,8 @@ Alternatively, to test this project as a single user, simply open the URL in two
 * User can send messages that will be received by all other users in the same chat room
 * User can send their location to other users in the same chat room by clicking the "Share Location" button (caution: sharing your location will drop a pin on Google Maps with your exact location; please exercise caution when sharing this information)
 * Messages containing profanity are blocked, and the offending user will receive an alert when attempting to submit the message
+* Users can see a list of other users in the chat room
+* When a user connects or disconnects, an announcement message is broadcast to the other users in the chat room
 
 ## Built With
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime environment
